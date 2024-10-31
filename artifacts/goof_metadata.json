@@ -6,6 +6,48 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favnum",
+						"type": "uint256"
+					}
+				],
+				"name": "addppl",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "arr",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favnum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "favnum",
 				"outputs": [
@@ -13,6 +55,43 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nametofavnum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "person1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favnum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -78,11 +157,11 @@
 	},
 	"sources": {
 		"goofy.sol": {
-			"keccak256": "0x5e7f224a066a04e71afe8edff40fc06fbb377183809af26adbed8529edfff35b",
+			"keccak256": "0x8777fc8151086b922c5658ac8aad038d420dc91e73c995aaf47eb8c80ea8579e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b868078d8a8472546c5ce364ba51118c286e46be02bad83a78567ccba5db6147",
-				"dweb:/ipfs/QmWjkEtR9cM5JmSrP76ejQp19RbYoLgPUjJhdFAomWagXB"
+				"bzz-raw://cf956eb5741d50888a12e165359b432c63477a2946809f8a19a31017fb65fc38",
+				"dweb:/ipfs/QmaVy7x9CVsWchbNapfp6dbjNggDPQjYHkefSn7XD3Xb1B"
 			]
 		}
 	},
