@@ -119,7 +119,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_num",
+						"name": "_favnum",
 						"type": "uint256"
 					}
 				],
@@ -142,7 +142,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"goofy.sol": "goof"
+			"silly.sol": "silly"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -157,11 +157,19 @@
 	},
 	"sources": {
 		"goofy.sol": {
-			"keccak256": "0x442a8e8f7290e1abdad3bf5fcebea683155b9ccb1795aec44583f657144b3c6a",
+			"keccak256": "0x760561848ffd81ec5cab786aa4208d6a0e93a077e73335ded590f4ad82e3920e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ebd31b592bf495685da16d730c0789284112adf64d0362aaf0b4fa7986c483f1",
-				"dweb:/ipfs/QmcwuKLWQU1LfwRiL7G1nakDMKpPCzfCToBRgFer6aFv7k"
+				"bzz-raw://b0dee07a5fbb5cbba9061d552f3a2b46a5ff3e57853eb06414cd366e82dc387b",
+				"dweb:/ipfs/QmadLhh5bAsGUjwc3tbDuZUSfTnPtEqjFiXrm4QE54W2MA"
+			]
+		},
+		"silly.sol": {
+			"keccak256": "0x61ce5c345002d15512b4dfc58c3586ffcab13e9cca339ed398a9d85f011b6196",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://253e8f5f596f77c653d368c05b535af8882e7b6c79cd9d7191b5b84a9503eeb6",
+				"dweb:/ipfs/QmbAid7GCbMQAvYwx7pVKQjvhP5U7fEhxGnmVEqTjXJdVo"
 			]
 		}
 	},

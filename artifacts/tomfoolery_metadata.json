@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "goofing",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "goofy",
+				"outputs": [
+					{
+						"internalType": "contract goof",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tomfoolery.sol": "tomfoolery"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"goofy.sol": {
+			"keccak256": "0xb4777c723992fa0aba60af4a6576bb007f35b83859fee511becb6f0b5568321d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aba243dcfc6d3197049a6620692463de2b5a7094aa8c602d5f3d9bbea87d3f53",
+				"dweb:/ipfs/QmTN9jHwMnBEw76vNSXNFhWg5GSmquDm2V4QL1U9kDzqge"
+			]
+		},
+		"tomfoolery.sol": {
+			"keccak256": "0xe56ef802756f5efca3c8ab4120509c8db6ac405b73056fe8a9dffe2e8736fcc2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74875d1248a4b351afbc1d879c6b4a63ecdcca16ed30d2a02bdf05d00dfe6574",
+				"dweb:/ipfs/QmQ5mt3HpaS57SFdcbvbJ71tYZ1PyZCEDYvL9tHPXpDeDs"
+			]
+		}
+	},
+	"version": 1
+}

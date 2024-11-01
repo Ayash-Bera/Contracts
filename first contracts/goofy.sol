@@ -21,13 +21,13 @@ contract goof {
     
     //uint256 [] public favnumlist; this will become a list then 
     ppl[] public arr ;
-    function sore(uint256 _num) public {
+    function sore(uint256 _num) public virtual { // virtal and override from silly.sol
         favnum = _num;
         favnum ++;
     }
 
-    function ret () public view returns (uint256 , uint256) {
-        uint256 numm = 877;
+    function ret () public view returns (uint256 , uint256) { //view and pure fucntions are read only 
+        uint256 numm = 69;
         // favnum ++ wonrt work here cause this function is view only view keyword shoriye dile it works again 
         return (favnum,numm);
     }
