@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-import "./goofy.sol";
+import "./goofy1.sol";
 
 contract tomfoolery{
     goof[] public addy; //addy is a goof type array which stores abi and addy
