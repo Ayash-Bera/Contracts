@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -142,9 +142,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"first contracts/goofy.sol": "goof"
+			"first contracts/goofy1.sol": "goof"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -156,12 +156,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"first contracts/goofy.sol": {
-			"keccak256": "0x6f8a5bf9c5b412726ad81333699d5a9fb7adb6af17bc1155960665d1ed8fa6ca",
+		"first contracts/goofy1.sol": {
+			"keccak256": "0xdafff63120f828677e1b4bbaa05d3e0c6b549e0db0668ac17928cb167cc60008",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e12a4321e6b4075d768a3b59137f8e7afb1beb181da04d487a9cf1d3d6da732f",
-				"dweb:/ipfs/QmUhRUSVLvsyRCZfvrhsDz9Xje5iEsV9XzaL7seJwwxFrV"
+				"bzz-raw://1176ec3c9a0564c018b85d48d48bcb1bb6e5d19aeb5c9b3bd39dca3dcc599d1e",
+				"dweb:/ipfs/QmaBdGKKTrdcb3b9ch6qt4DtaV2GVcW91ZQxmjcWsZ6SXn"
 			]
 		}
 	},

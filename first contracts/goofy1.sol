@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.8; 
+pragma solidity ^0.8.24; 
 // the ^ is for this and further remove the ^ for a specific version 
 // use >= 0.8.7 <0.9.0 is like setting parameters 
 contract goof {
@@ -21,7 +21,7 @@ contract goof {
     
     //uint256 [] public favnumlist; this will become a list then 
     ppl[] public arr ;
-    function sore(uint256 _num) public virtual { // virtal and override from silly.sol
+    function sore(uint256 _num) public virtual { // virtual and override from silly.sol
         favnum = _num;
         favnum ++;
     }

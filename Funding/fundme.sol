@@ -2,28 +2,31 @@
 //4:24;01 TIMESTAMP
 pragma solidity ^0.8.8;
 
-import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
-
-import "./PriceConverter.sol";
+import {PriceConverter} from "./PriceConverter.sol";
 
 // msg.value and msg.sender are global keywords 
 // value gives the amount of oney or eth being sent and sender gives the addy 
 
 contract fundme{
 
-    using PriceConverter for uint256 ; // for the library 
-    uint256 usd = 50 * 1e18; // need to e the same unit as eth 
+    address immutable owner; // m,akes it so it cant be chqanged later but can be accessed through a function 
+    using PriceConverter for uint256 ; // for the library  // now every uint256 knows and have access to that library about price converter 
+    uint256 public constant usd = 5e18; // need to e the same unit as eth 
+    // constant and immutable keywords saves gas 
     address [] public funders ;// addy array
-    mapping (address => uint256) public AddressAndAmount; // connecting the address to the amount 
+    mapping (address => uint256 ) public AddressAndAmount; // connecting the address to the amount 
 
-
+    constructor (){
+        owner = (msg.sender);
+    }
 
     function fund() public payable  { //payable is the thing that makes the button red 
         //setting a min amount that needs to be sent 
-        require((msg.value.getconversionrate()) >= usd , "womp womp you broke"); //greater than one eth 1e18 is 1*10**18 (power)
+        require (msg.value.getconversionrate() >= usd , "womp womp you broke"); // msg.value acts as a uint 256 if you put somn else in the brackets then extra stuff gets added but msg .value is the og uint 
+        //greater than one eth 1e18 is 1*10**18 (power)
         // its like an if statement 
         funders.push(msg.sender);
-        AddressAndAmount[msg.sender] = msg.value;
+        AddressAndAmount[msg.sender] += msg.value;
     }
 
     // function getprice() public view returns (uint256) { // gives the price of eth in usd 
@@ -46,26 +49,35 @@ contract fundme{
     //     return (ethinusd);
     // }
 
+// unchecked keywiord doesnt wrap around a number like max ceil jodi 255 hoye then 255++ gave 0 which caused errors 
 
-
-    function withdraw() public{
+    function withdraw() public OnlyFans{
         for (uint256 i =0 ; i<=funders.length;i++ ){
             address funder = funders[i];// storing current addy 
             AddressAndAmount[funder] = 0;
         }
         funders = new address[](0); // refreshes the array to be a new array with no objects in it 
         /* the objects insisd ethe (0) means how many objects will be there in the array  */
+        // starts at index 0 ota 6 likhle 
 
 
         // SENDING ETH  withdrawing 
         //msg.sender = addy type 
         // payable wrapped 
         // transfer throws an error if gas is more than 2300 and reverts the trans 
-        payable(msg.sender).transfer(address(this).balance); // this keyword returns the addy of this contract 
-        //send 
-        bool success = payable(msg.sender).send(address(this).balance);
-        require (success , "failed"); // if we use this statement only then it will revert the payment 
-        //call
-        (bool ssucc , bytes memory datareturned )=payable(msg.sender).call{value: address(this).balance}("");
+        /////////////////////////// payable(msg.sender).transfer(address(this).balance); // this keyword returns the addy of this contract 
+        /////////////////////////// // wrapped it in payable from an addy type  
+        /////////////////////////// //send 
+        /////////////////////////// bool success = payable(msg.sender).send(address(this).balance);
+        /////////////////////////// require (success , "failed"); // if we use this statement only then it will revert the payment 
+        /////////////////////////// //call
+        (bool ssucc/*it holds the true or false  */ , /*bytes memory datareturned /* /*bytes required memoery cause its an array */ )=payable(msg.sender).call{value: address(this).balance}("");
+        require(ssucc,"call failed");
+
+    }
+    modifier OnlyFans(){
+        require(msg.sender == owner , "not owner");
+        _; // this is where the rest of the function code haoppens 
+        // if _; was on the first line then code exe before the requir statement 
     }
 }
