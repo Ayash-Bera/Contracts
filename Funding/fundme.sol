@@ -7,6 +7,10 @@ import {PriceConverter} from "./PriceConverter.sol";
 // msg.value and msg.sender are global keywords 
 // value gives the amount of oney or eth being sent and sender gives the addy 
 
+error notowner(); // custom error saves gas 
+error brokie();
+
+
 contract fundme{
 
     address immutable owner; // m,akes it so it cant be chqanged later but can be accessed through a function 
@@ -22,7 +26,11 @@ contract fundme{
 
     function fund() public payable  { //payable is the thing that makes the button red 
         //setting a min amount that needs to be sent 
-        require (msg.value.getconversionrate() >= usd , "womp womp you broke"); // msg.value acts as a uint 256 if you put somn else in the brackets then extra stuff gets added but msg .value is the og uint 
+        // require (msg.value.getconversionrate() >= usd , "womp womp you broke");
+         // msg.value acts as a uint 256 if you put somn else in the brackets then extra stuff gets added but msg .value is the og uint 
+        if (msg.value.getconversionrate()< usd ){
+            revert brokie();
+        }
         //greater than one eth 1e18 is 1*10**18 (power)
         // its like an if statement 
         funders.push(msg.sender);
@@ -75,9 +83,36 @@ contract fundme{
         require(ssucc,"call failed");
 
     }
-    modifier OnlyFans(){
-        require(msg.sender == owner , "not owner");
-        _; // this is where the rest of the function code haoppens 
-        // if _; was on the first line then code exe before the requir statement 
+    modifier OnlyFans(){ 
+        if (msg.sender != owner){ // this is gas eff 
+            revert notowner();
+        }
+        _;// this is where the rest of the function code happens 
     }
+
+    // require(msg.sender == owner , "not owner"); ths is not gass eff 
+    //require(msg.sender == owner , notowner()); both of these work 
+    // if _; was on the first line then code exe before the requir statement 
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
+    
+    //     /*
+    // Which function is called, fallback() or receive()?
+    //        send Ether
+    //            |
+    //      msg.data is empty?
+    //           /      \
+    //         yes       no
+    //         /          \
+//  receive() exists?      fallback()
+    //      /   \
+    //     yes   no
+    //     /      \
+    // receive()   fallback()
+    // */
 }
