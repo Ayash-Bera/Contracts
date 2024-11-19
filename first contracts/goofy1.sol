@@ -21,7 +21,7 @@ contract goof {
     
     //uint256 [] public favnumlist; this will become a list then 
     ppl[] public arr ;
-    function sore(uint256 _num) public virtual { // virtual and override from silly.sol
+    function sore(uint256 _num) public virtual { // virtual and override to silly.sol
         favnum = _num;
         favnum ++;
     }
